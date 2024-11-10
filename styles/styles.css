@@ -124,7 +124,8 @@ nav ol li:hover {
     height: 140px;
     width: 140px;
     border-radius: 50%;
-    border: 5px solid #272133;                           /* Image */
+    border: 5px solid #272133;
+    /* Image */
     margin-top: 35px;
     margin-left: 10px;
     box-shadow: 0 10px 50px rgb(0, 13, 154);
@@ -194,7 +195,7 @@ nav ol li:hover {
     align-items: center;
     animation: bounceColor 5s infinite;
     margin-left: 45%;
-    
+
 }
 
 @keyframes bounceColor {
@@ -379,6 +380,7 @@ nav ol li:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .contact-image {
     display: flex;
     position: absolute;
@@ -386,11 +388,13 @@ nav ol li:hover {
     height: 170px;
     width: 170px;
     border-radius: 50%;
-    border: 5px solid #272133;                           /* Image */
+    border: 5px solid #272133;
+    /* Image */
     margin-top: 110px;
     margin-left: 35px;
     box-shadow: 0 10px 50px rgb(0, 13, 154);
 }
+
 .contact-content {
     height: 375px;
     margin-top: 65px;
@@ -470,4 +474,168 @@ footer .ft:hover {
     cursor: pointer;
     text-decoration: underline;
     transition: 0.5s;
+}
+
+
+
+/* Responsive Navigation */
+.nav-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+.nav-close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        z-index: 3;
+        color: #000;
+        display: block;
+    }
+
+    .nav-close {
+        display: block;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 250px;
+        backdrop-filter: blur(100px);
+        padding: 50px 20px;
+        z-index: 999;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar.active {
+        right: 0;
+    }
+
+    .navbar ol {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .navbar ol li {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+    }
+
+    .logo {
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Adjust content areas */
+    .home-page-div,
+    .about-page-div,
+    .skills-page-div,
+    .certificates-page-div,
+    .projects-page-div {
+        height: 80%;
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .contact-page-div {
+        height: 95%;
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .home-content,
+    .about-content,
+    .skills-content,
+    .certificates-content,
+    .projects-content {
+        margin-top: 50px;
+        height: fit-content;
+    }
+
+    .contact-content {
+        height: 400px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .home-content p,
+    .about-content p,
+    .skills-content p {
+        margin-left: 0;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .home-image,
+    .contact-image {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        margin: 20px auto;
+    }
+
+    .pdf-list,
+    .projects-list,
+    .contact-list li {
+        width: 80%;
+        font-size: 15px;
+    }
+
+    section {
+        padding-top: 60px;
+    }
+    .portfolio p {
+        
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Smaller devices */
+@media screen and (max-width: 480px) {
+
+    .home-page-div,
+    .about-page-div,
+    .skills-page-div,
+    .certificates-page-div,
+    .projects-page-div,
+    .contact-page-div {
+        height: auto;
+        min-height: 500px;
+    }
+
+    .pdf-list,
+    .projects-list,
+    .contact-list li {
+        width: 90%;
+    }
 }
